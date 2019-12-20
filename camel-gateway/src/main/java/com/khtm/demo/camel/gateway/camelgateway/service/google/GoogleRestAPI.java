@@ -8,8 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class GoogleRestAPI implements RestAPI {
 
+    private GoogleProcessor googleProcessor;
+
     @Autowired
-    GoogleProcessor googleProcessor;
+    public GoogleRestAPI(GoogleProcessor googleProcessor) {
+        this.googleProcessor = googleProcessor;
+    }
 
     @Override
     public RestObject GetRestAPI() {
@@ -19,7 +23,7 @@ public class GoogleRestAPI implements RestAPI {
 
     @Override
     public RestObject PutRestAPI() {
-        RestObject restObject = new RestObject("/find-me", googleProcessor);
+        RestObject restObject = new RestObject("/find-me-de", googleProcessor);
         return restObject;
     }
 }
