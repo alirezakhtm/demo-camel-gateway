@@ -23,11 +23,12 @@ public abstract class ServiceAPI extends RouteBuilder {
         rest().get(restAPI.GetRestAPI().getUrl() + "-status").to("direct:home");
 
 
-        from("direct:get-rest-processor").process(restAPI.GetRestAPI().getProcessor());//.marshal().json();
-        from("direct:put-rest-processor").process(restAPI.PutRestAPI().getProcessor());//.marshal().json();
+        from("direct:get-rest-processor").process(restAPI.GetRestAPI().getProcessor());
+        from("direct:put-rest-processor").process(restAPI.PutRestAPI().getProcessor());
 
-        from("direct:home").transform().constant("{\"stauts\":\"Up\"}");
+        from("direct:home").transform().constant("{\"status\":\"Up\"}");
 
+        this.callService();
 
     }
 }
