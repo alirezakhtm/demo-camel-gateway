@@ -8,6 +8,6 @@ import java.util.Map;
 public interface RestAPI {
 
     RestObject GetRestAPI();
-    RestObject PutRestAPI();
+    RestObject PostRestAPI();
 
 }
