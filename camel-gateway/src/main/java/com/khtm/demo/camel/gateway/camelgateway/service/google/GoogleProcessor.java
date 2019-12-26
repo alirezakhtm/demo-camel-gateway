@@ -16,8 +16,9 @@ public class GoogleProcessor implements Processor {
           */
         Message message = exchange.getIn();
 //        message.setBody(RestUtil.callRest("https://www.google.com/search?q=alirezakhtm"));
-        message.setBody(RestUtil.callRest("https://www.google.com"));
-        message.setHeader("Content-Type", "text/xml");
+        message.setBody(RestUtil.callRest("https://github.com/alirezakhtm"));
+        message.setHeader("Content-Type", "text/html; charset=UTF-8");
+//        message.setHeader("Content-Type", "multipart/form-data; boundary=something");
         exchange.setIn(message);
     }
 }

@@ -22,7 +22,7 @@ public class GoogleRestAPI implements RestAPI {
     }
 
     @Override
-    public RestObject PutRestAPI() {
+    public RestObject PostRestAPI() {
         RestObject restObject = new RestObject("/find-me-de", googleProcessor);
         return restObject;
     }
