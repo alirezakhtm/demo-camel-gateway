@@ -1,4 +1,4 @@
-package com.khtm.demo.camel.gateway.camelgateway.service.google;
+package com.khtm.demo.camel.gateway.camelgateway.service.github;
 
 import com.khtm.demo.camel.gateway.camelgateway.service.ServiceAPI;
 import org.slf4j.Logger;
@@ -7,24 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GoogleServiceAPI extends ServiceAPI {
+public class GithubServiceAPI extends ServiceAPI {
 
-    private GoogleRestAPI googleRestAPI;
+    private GithubRestAPI githubRestAPI;
     private Logger logger = LoggerFactory.getLogger("google.service.api.class");
 
     @Autowired
-    public GoogleServiceAPI(GoogleRestAPI googleRestAPI){
-        this.googleRestAPI = googleRestAPI;
-    }
-
-    @Override
-    protected void callService() {
-        logger.info("CallService function has been called ...");
+    public GithubServiceAPI(GithubRestAPI githubRestAPI){
+        this.githubRestAPI = githubRestAPI;
     }
 
     @Override
     public void configure() throws Exception {
-        this.setRestAPI(googleRestAPI);
+        logger.info("Start Github Service API");
+        this.setRestAPI(githubRestAPI);
         super.configure();
     }
 }

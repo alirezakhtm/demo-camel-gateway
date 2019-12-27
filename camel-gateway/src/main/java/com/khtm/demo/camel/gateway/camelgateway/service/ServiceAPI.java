@@ -6,8 +6,6 @@ public abstract class ServiceAPI extends RouteBuilder {
 
     private RestAPI restAPI;
 
-    protected abstract void callService();
-
     protected void setRestAPI(RestAPI restAPI){
         this.restAPI = restAPI;
     }
@@ -26,8 +24,6 @@ public abstract class ServiceAPI extends RouteBuilder {
         from("direct:post-rest-processor").process(restAPI.PostRestAPI().getProcessor());
 
         from("direct:home").transform().constant("{\"status\":\"Up\"}");
-
-        this.callService();
 
     }
 }
