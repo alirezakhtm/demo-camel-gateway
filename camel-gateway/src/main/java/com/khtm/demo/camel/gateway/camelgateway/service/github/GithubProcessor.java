@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class GithubProcessor extends RestServiceProcess {
 
-    public GithubProcessor(@Qualifier("google-rest-service-find-me") String urlDesired) {
+    public GithubProcessor(@Qualifier("github-rest-service-find-me") String urlDesired) {
         super(urlDesired);
     }
 }

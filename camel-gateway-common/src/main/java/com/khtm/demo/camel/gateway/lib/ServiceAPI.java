@@ -2,6 +2,8 @@ package com.khtm.demo.camel.gateway.lib;
 
 import org.apache.camel.builder.RouteBuilder;
 
+import java.util.UUID;
+
 public abstract class ServiceAPI extends RouteBuilder {
 
     private RestAPI restAPI;
@@ -13,17 +15,17 @@ public abstract class ServiceAPI extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        rest().get(restAPI.GetRestAPI().getUrl()).to("direct:get-rest-processor");
-        rest().get(restAPI.PostRestAPI().getUrl()).to("direct:post-rest-processor");
+        String routeName = UUID.randomUUID().toString();
 
-        // default home page
-        rest().get(restAPI.GetRestAPI().getUrl() + "-status").to("direct:home");
+        rest().get(restAPI.GetRestAPI().getUrl()).toD("direct:get-rest-processor-" + routeName);
+        rest().get(restAPI.PostRestAPI().getUrl()).toD("direct:post-rest-processor-" + routeName);
 
+        rest().get(restAPI.GetRestAPI().getUrl() + "-status").toD("direct:home-" + routeName);
 
-        from("direct:get-rest-processor").process(restAPI.GetRestAPI().getProcessor());
-        from("direct:post-rest-processor").process(restAPI.PostRestAPI().getProcessor());
+        from("direct:get-rest-processor-" + routeName).process(restAPI.GetRestAPI().getProcessor());
+        from("direct:post-rest-processor-" + routeName).process(restAPI.PostRestAPI().getProcessor());
 
-        from("direct:home").transform().constant("{\"status\":\"Up\"}");
+        from("direct:home-" + routeName).transform().constant("{\"status\":\"Up\"}");
 
     }
 }

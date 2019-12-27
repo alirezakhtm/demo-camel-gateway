@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class GithubServiceAPI extends ServiceAPI {
 
     private GithubRestAPI githubRestAPI;
-    private Logger logger = LoggerFactory.getLogger("google.service.api.class");
+    private Logger logger = LoggerFactory.getLogger("github.service.api.class");
 
     @Autowired
     public GithubServiceAPI(GithubRestAPI githubRestAPI){
