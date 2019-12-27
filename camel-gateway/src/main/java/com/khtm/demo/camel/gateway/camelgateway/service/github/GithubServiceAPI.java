@@ -1,6 +1,6 @@
 package com.khtm.demo.camel.gateway.camelgateway.service.github;
 
-import com.khtm.demo.camel.gateway.camelgateway.service.ServiceAPI;
+import com.khtm.demo.camel.gateway.lib.ServiceAPI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

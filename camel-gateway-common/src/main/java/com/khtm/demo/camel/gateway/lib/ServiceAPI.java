@@ -1,4 +1,4 @@
-package com.khtm.demo.camel.gateway.camelgateway.service;
+package com.khtm.demo.camel.gateway.lib;
 
 import org.apache.camel.builder.RouteBuilder;
 

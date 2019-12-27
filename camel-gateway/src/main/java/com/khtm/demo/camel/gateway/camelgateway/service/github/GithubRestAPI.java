@@ -1,7 +1,7 @@
 package com.khtm.demo.camel.gateway.camelgateway.service.github;
 
-import com.khtm.demo.camel.gateway.camelgateway.service.RestAPI;
-import com.khtm.demo.camel.gateway.camelgateway.service.RestObject;
+import com.khtm.demo.camel.gateway.lib.RestAPI;
+import com.khtm.demo.camel.gateway.lib.RestObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

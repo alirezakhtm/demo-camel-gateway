@@ -1,7 +1,6 @@
 package com.khtm.demo.camel.gateway.camelgateway.service.github;
 
-
-import com.khtm.demo.camel.gateway.camelgateway.service.RestServiceProcess;
+import com.khtm.demo.camel.gateway.lib.RestServiceProcess;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 

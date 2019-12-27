@@ -1,4 +1,4 @@
-package com.khtm.demo.camel.gateway.camelgateway.service;
+package com.khtm.demo.camel.gateway.lib;
 
 import org.apache.camel.Processor;
 
@@ -6,9 +6,6 @@ public class RestObject {
 
     private String url;
     private Processor processor;
-
-    public RestObject() {
-    }
 
     public RestObject(String url, Processor processor) {
         this.url = url;

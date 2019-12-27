@@ -1,4 +1,4 @@
-package com.khtm.demo.camel.gateway.camelgateway.service;
+package com.khtm.demo.camel.gateway.lib;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
